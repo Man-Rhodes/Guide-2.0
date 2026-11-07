@@ -8,7 +8,8 @@ Static multi-page site for GitHub Pages, backed by Supabase (logins, database) a
 3. Put your Project URL and anon key in `js/config.js`.
 4. Deploy the AI function (Supabase CLI): `supabase functions deploy chat` then `supabase secrets set ANTHROPIC_API_KEY=sk-ant-...`
 5. Make yourself admin: `insert into admins select id from auth.users where email='you@example.com';`
-6. Upload these files to your repo root (replace the old ones). Settings > Pages > Deploy from branch `main` / root.
+6. Run `supabase/admin.sql` too (adds the admin panel). Open `admin.html` while signed in as an admin; nobody else can read the data, the database refuses them.
+7. Upload these files to your repo root (replace the old ones). Settings > Pages > Deploy from branch `main` / root.
 
 ## Backups
 Users can export JSON from My profile. For the database, use Supabase dashboard backups (daily on paid plans) or run `supabase db dump -f backup.sql` on a schedule; keep copies outside Supabase.

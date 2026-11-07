@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex">
+<title>Admin panel | EduGuide Gauteng</title><link rel="stylesheet" href="css/style.css">
+<style>.bars{display:grid;gap:4px}.bar1{display:flex;align-items:center;gap:8px;font-size:13px}.bar1 i{display:block;height:14px;background:var(--ac);border-radius:4px;min-width:2px}.bar1 span:first-child{width:48px;color:var(--mu)}td button{padding:3px 8px;font-size:12px}</style></head>
+<body data-page="admin" data-auth="1"><header></header><main>
+<h2>🛠️ Database panel</h2><p id="deny" class="err" role="alert"></p>
+<div id="panel" hidden>
+<div class="chips" id="tabs"></div><div class="err" id="err" role="alert"></div>
+<div id="t-overview"><div class="grid"><div class="card"><div class="stat" id="s1">–</div><div class="mu">questions</div></div><div class="card"><div class="stat" id="s2">–</div><div class="mu">users with questions</div></div><div class="card"><div class="stat" id="s3">–</div><div class="mu">questions, last 7 days</div></div><div class="card"><div class="stat" id="s4">–</div><div class="mu">registered users</div></div></div><h3>Questions per day</h3><div class="bars" id="daily"></div></div>
+<div id="t-users" hidden><div class="bar"><input id="uq" type="search" maxlength="60" placeholder="Search email…" aria-label="Search users"></div><div class="scroll"><table><thead><tr><td><b>Email</b></td><td><b>Joined</b></td><td><b>Last sign-in</b></td><td><b>Qs</b></td><td><b>Saved</b></td><td><b>Actions</b></td></tr></thead><tbody id="ub"></tbody></table></div></div>
+<div id="t-questions" hidden><div class="bar"><input id="qq" type="search" maxlength="60" placeholder="Search questions…" aria-label="Search questions"><button class="btn s" id="pv">← Newer</button><button class="btn s" id="nx">Older →</button></div><p class="mu" id="qinfo"></p><div class="scroll"><table><tbody id="qb"></tbody></table></div></div>
+<div id="t-export" hidden><div class="card"><h3>Export &amp; backup</h3><p class="mu">Downloads everything the panel can see. Store copies somewhere other than Supabase.</p><div class="bar"><button class="btn" id="xj">Full backup (JSON)</button><button class="btn s" id="xc">Questions (CSV)</button><button class="btn s" id="xu">Users (CSV)</button></div></div></div>
+</div></main>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+<script src="js/config.js"></script><script src="js/app.js"></script><script src="js/admin.js"></script></body></html>
